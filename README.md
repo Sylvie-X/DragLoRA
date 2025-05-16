@@ -16,7 +16,7 @@
 </p>
 
 ## ✔️ TODO  
-- [ ] Release codes
+- [ ] Release codes for bench evaluation
 - [ ] Update readme for guidance
 - [ ] Release paper on arXiv
 
