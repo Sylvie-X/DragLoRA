@@ -60,7 +60,7 @@ if __name__ == '__main__':
     img_dir = args.img_path
     if img_dir != '':
         root_dir = img_dir
-        lora_dir = 'drag_back_bench_lora/' + img_dir 
+        lora_dir = 'drag_bench_lora_for_' + img_dir 
     else:
         root_dir  = args.root_path
         lora_dir = 'drag_bench_lora' 

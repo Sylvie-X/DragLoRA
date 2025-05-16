@@ -14,6 +14,9 @@
     <br>
     <b>East China Normal University</b>
   </p>
+  <div align="center">
+    <img src="cmp.png", width="700">
+  </div>
 </p>
 
 ## Project Status
@@ -69,7 +72,7 @@ python run_lora_training.py
 ```
 Results will be saved in "drag_bench_lora"
 
-4. Run DragLoRA evaluation:
+4. Run DragLoRA:
 ```bash
 python run_dragbench_draglora.py
 ```
@@ -84,6 +87,28 @@ Results will be saved in "drag_results"
    ```bash
    python run_eval_similarity.py --eval_root drag_results
    ```
+### Drag-Back pipeline
+To simultaneously measure editability and consistency through two symmetric editing operations, first drag once following above instructions.
+After that, drag twice with:
+1. Train reconstruction LoRA:
+```bash
+python run_lora_training.py --img_path drag_results
+```
+Results will be saved in "drag_bench_lora_for_drag_results"
+
+2. Run DragLoRA:
+```bash
+python run_dragbench_draglora.py \
+--img_dir drag_results \
+--lora_dir drag_bench_lora_for_drag_results \
+--save_dir drag_back_results
+```
+Results will be saved in "drag_back_results"
+
+3. Evaluate performance by compare the similarity between the drag-back images and original images:
+```bash
+   python run_eval_similarity.py --eval_root drag_back_results
+```
 
 ## Citation
 If you find our work useful, please cite our paper:
