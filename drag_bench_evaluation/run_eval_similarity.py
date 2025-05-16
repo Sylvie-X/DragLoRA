@@ -110,7 +110,7 @@ if __name__ == '__main__':
                     all_clip_sim.append(cur_clip_sim.cpu().numpy())
                 bar.next()
         print(target_root)
-        print('avg mse:', np.mean(all_mse))
         print('avg lpips: ', np.mean(all_lpips))
         print('avg clip sim', np.mean(all_clip_sim))
+        print('avg mse:', np.mean(all_mse))
         bar.finish()

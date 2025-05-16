@@ -270,7 +270,6 @@ def run_drag(source_image,
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="setting arguments")
-    parser.add_argument('--recon_steps', type=int, default=80, help='number of steps to finetune reconstruction-lora')
     parser.add_argument('--drag_steps', type=int, default=80, help='number of steps to finetune drag-lora')
     parser.add_argument('--inv_strength', type=float, default=0.7, help='inversion strength')
     parser.add_argument('--lora_lr', type=float, default=0.0001, help='learning rate for draglora')
@@ -332,7 +331,7 @@ if __name__ == '__main__':
                     points[i], points[i+1] = points[i+1], points[i]
 
             # load lora
-            lora_path = os.path.join(args.lora_dir, cat, sample_name, str(args.recon_steps))
+            lora_path = os.path.join(args.lora_dir, cat, sample_name)
             print("applying lora: " + lora_path)
 
             sample_save_dir = os.path.join(args.save_dir, cat, sample_name)
