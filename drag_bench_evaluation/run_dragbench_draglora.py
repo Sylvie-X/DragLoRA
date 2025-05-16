@@ -240,7 +240,8 @@ def run_drag(source_image,
         save_dir,
         args,
         ori_unet=ori_unet,
-        save_interlora=False
+        save_interlora=False,
+        save_finallora=False
     )
 
     # denose z_{35} to z_{0} with MasaCtrl

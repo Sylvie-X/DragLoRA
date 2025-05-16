@@ -127,7 +127,8 @@ def drag_diffusion_update(model,
                           save_lora_path,
                           args,
                           ori_unet=None,
-                          save_interlora=False):
+                          save_interlora=False,
+                          save_finallora=False):
 
     assert len(handle_points) == len(target_points), \
         "number of handle point must equals target points"
@@ -198,8 +199,18 @@ def drag_diffusion_update(model,
                             ada = True
                             print('good enough, activate only-ILFA!')
                     elif max(minD) > 1.3:
-                        # Point tracking confidence is low, revert to previous handle points
-                        retrain += 1
+                        # Point tracking confidence is low, revert to previous handle points.
+                        # If retain too many times, keep the tracked handle points.
+                        retain += 1
+                        if retain <= 3:
+                            for i in range(len(minD)):
+                                if minD[i] > 1.3:
+                                    handle_points[i] = handle_points_pre[i]
+                            step_idx -= 1
+                            print('minD too large, trace back the points!')
+                        else:
+                            retain = 0
+                            print('too many trace back, update the points!')
                     elif retain > 0:
                         retain = 0
                 else:
@@ -320,14 +331,15 @@ def drag_diffusion_update(model,
         for epoch, ada, mind, pt in zip(steps, adanums, minDs, PTs):
             writer.writerow([epoch, ada, mind, pt]) 
 
-    unet_lora_layers = unet_lora_state_dict(model.unet)
-    LoraLoaderMixin.save_lora_weights(
-        save_directory=save_lora_path,
-        unet_lora_layers=unet_lora_layers,
-        text_encoder_lora_layers=None,
-    )
-    path = os.path.join(save_lora_path,'z35.pth')
-    torch.save(init_code.detach(),path)
+    if save_finallora:
+        unet_lora_layers = unet_lora_state_dict(model.unet)
+        LoraLoaderMixin.save_lora_weights(
+            save_directory=save_lora_path,
+            unet_lora_layers=unet_lora_layers,
+            text_encoder_lora_layers=None,
+        )
+        path = os.path.join(save_lora_path,'z35.pth')
+        torch.save(init_code.detach(),path)
    
     return init_code
 
