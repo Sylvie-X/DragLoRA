@@ -44,7 +44,7 @@ if __name__ == '__main__':
         help='root of dragging results for evaluation',
         required=True)
     parser.add_argument('--root_path',
-        default='/data/xsw/DragDiffusion-main/drag_bench_evaluation/drag_bench_data',
+        default='drag_bench_data',
         help='root of DragBench',
         )
     args = parser.parse_args()

@@ -198,18 +198,8 @@ def drag_diffusion_update(model,
                             ada = True
                             print('good enough, activate only-ILFA!')
                     elif max(minD) > 1.3:
-                        # Point tracking confidence is low, revert to previous handle points.
-                        # If retain too many times, keep the tracked handle points.
-                        retain += 1
-                        if retain <= 3:
-                            for i in range(len(minD)):
-                                if minD[i] > 1.3:
-                                    handle_points[i] = handle_points_pre[i]
-                            step_idx -= 1
-                            print('minD too large, trace back the points!')
-                        else:
-                            retain = 0
-                            print('too many trace back, update the points!')
+                        # Point tracking confidence is low, revert to previous handle points
+                        retrain += 1
                     elif retain > 0:
                         retain = 0
                 else:

@@ -16,7 +16,8 @@
 </p>
 
 ## ✔️ TODO  
-- [ ] Release codes for bench evaluation
+- [x] Release codes for bench evaluation
+- [ ] Release codes for Gradio ui
 - [ ] Update readme for guidance
 - [ ] Release paper on arXiv
 

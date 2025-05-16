@@ -274,11 +274,11 @@ if __name__ == '__main__':
     parser.add_argument('--inv_strength', type=float, default=0.7, help='inversion strength')
     parser.add_argument('--lora_lr', type=float, default=0.0001, help='learning rate for draglora')
     parser.add_argument('--unet_feature_idx', type=int, default=3, help='feature idx of unet features')
-    parser.add_argument('--root_dir', type=str, default='/data/xsw/DragDiffusion-main/drag_bench_evaluation/drag_bench_data', help='path to dragbench')
+    parser.add_argument('--root_dir', type=str, default='drag_bench_data', help='path to dragbench')
     parser.add_argument('--img_dir', type=str, default='', help='path to drag-once outputs, change it if running dragback')
-    parser.add_argument('--lora_dir', type=str, default='/data/xsw/DragDiffusion-main/drag_bench_evaluation/drag_bench_lora', help='path to pre-saved reconstruction-lora')
+    parser.add_argument('--lora_dir', type=str, default='drag_bench_lora', help='path to pre-saved reconstruction-lora')
     parser.add_argument('--save_dir', type=str, default='drag_results', help='path to save dragged outputs')
-    parser.add_argument('--model_path', type=str, default='/data/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/1d0c4ebf6ff58a5caecab40fa1406526bca4b5b9', help='path to sd1.5')
+    parser.add_argument('--model_path', type=str, default='runwayml/stable-diffusion-v1-5', help='path to sd1.5')
     args = parser.parse_args()
     
     all_category = [

@@ -125,11 +125,11 @@ if __name__ == '__main__':
         help='root of dragging results for evaluation',
         required=True)
     parser.add_argument('--model_path',
-        default='/data/huggingface/hub/models--stabilityai--stable-diffusion-2-1/snapshots/5cae40e6a2745ae2b01ad92ae5043f95f23644d6',
+        default='stabilityai/stable-diffusion-2-1',
         help='root of SD2.1',
         )
     parser.add_argument('--root_path',
-        default='/data/xsw/DragDiffusion-main/drag_bench_evaluation/drag_bench_data',
+        default='drag_bench_data',
         help='root of DragBench',
         )
     args = parser.parse_args()

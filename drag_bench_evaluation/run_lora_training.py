@@ -31,7 +31,7 @@ from utils.lora_utils import train_lora
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="setting arguments")
     parser.add_argument('--root_path',
-        default='/data/xsw/DragDiffusion-main/drag_bench_evaluation/drag_bench_data',
+        default='drag_bench_data',
         help='root of DragBench',
         )
     parser.add_argument('--img_path',
@@ -39,7 +39,7 @@ if __name__ == '__main__':
         help='path to drag-once outputs, change it if running dragback',
         )
     parser.add_argument('--model_path',
-        default='/data/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/1d0c4ebf6ff58a5caecab40fa1406526bca4b5b9',
+        default='runwayml/stable-diffusion-v1-5',
         help='root of SD1.5',
         )
     args = parser.parse_args()
