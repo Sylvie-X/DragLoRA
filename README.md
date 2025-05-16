@@ -17,7 +17,7 @@
 
 ## ✔️ TODO  
 - [x] Release codes for bench evaluation
-- [ ] Release codes for Gradio ui
+- [x] Release codes for Gradio ui
 - [ ] Update readme for guidance
 - [ ] Release paper on arXiv
 
@@ -34,6 +34,3 @@ If you find our work helpful, please consider leaving a star or cite our paper :
 
 ## Acknowledgement
 This work is developed upon [DragDiffusion](https://github.com/Yujun-Shi/DragDiffusion). We would like to express our gratitude to the authors of this work and all the open source diffusion models and libraries.
-
-## License
-Code related to the DragDiffusion algorithm is under Apache 2.0 license.
