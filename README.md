@@ -13,7 +13,9 @@
     &nbsp;&nbsp;
     <br>
     <b>East China Normal University</b>
+    <div align="center">
     <a href="https://arxiv.org/abs/2505.12427"><img alt='arXiv' src="https://img.shields.io/badge/arXiv-2505.12427-blue"></a>
+    </div>
   </p>
   
   <div align="center">
