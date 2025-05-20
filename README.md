@@ -13,7 +13,9 @@
     &nbsp;&nbsp;
     <br>
     <b>East China Normal University</b>
+    <a href="https://arxiv.org/abs/2505.12427"><img alt='arXiv' src="https://img.shields.io/badge/arXiv-2505.12427-blue"></a>
   </p>
+  
   <div align="center">
     <img src="cmp.png", width="700">
   </div>
@@ -23,7 +25,7 @@
 - [x] Release benchmark evaluation code
 - [x] Release Gradio user interface
 - [x] Update readme for detailed usage guide 
-- [ ] Release paper on arXiv
+- [x] Release paper on arXiv
 
 ## Installation
 To set up the environment, run:
